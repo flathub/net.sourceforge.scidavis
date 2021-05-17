@@ -89,10 +89,16 @@ modules:
         --confirm-license
         --bindir=/app/bin
         --destdir=/app/lib/python3.${PYVER}/site-packages
-        --designer-plugindir=/app/lib/plugins/designer
-        --qml-plugindir=/app/lib/plugins/PyQt5
         --sipdir=/app/share/sip
         --stubsdir=/app/lib/python3.${PYVER}/site-packages/PyQt5
+        --no-designer-plugin
+        --no-qml-plugin
+        --no-python-dbus
+        --no-tools
+        --enable=QtCore
+        --enable=QtGui
+        --enable=QtNetwork
+        --enable=QtWidgets
       - make -j $FLATPAK_BUILDER_N_JOBS
       - make install
     cleanup:
@@ -119,6 +125,7 @@ modules:
          - -DORIGIN_IMPORT:BOOL=ON
          - -DPyQt_INCLUDE_DIR=/app/share/sip
     post-install:
+      - mv /app/share/mime/packages/scidavis.xml /app/share/mime/packages/${FLATPAK_ID}.xml
       - install -Dm644 scidavis/scidavis.appdata.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.appdata.xml
     sources:
       - type: archive

@@ -30,7 +30,12 @@ modules:
     sources:
     - type: archive
       url: https://github.com/beltoforion/muparser/archive/v2.3.2.tar.gz
-      sha256: b35fc84e3667d432e3414c8667d5764dfa450ed24a99eeef7ee3f6647d44f301 
+      sha256: b35fc84e3667d432e3414c8667d5764dfa450ed24a99eeef7ee3f6647d44f301
+      x-checker-data:
+        type: anitya
+        project-id: 2033
+        stable-only: true
+        url-template: https://github.com/beltoforion/muparser/archive/v$version.tar.gz
 
   - name: python3-packaging
     buildsystem: simple
@@ -38,8 +43,11 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/86/3c/bcd09ec5df7123abcf695009221a52f90438d877a2f1499453c6938f5728/packaging-20.9.tar.gz
-        sha256: 5b327ac1320dc863dca72f4514ecc086f31186744b84a230374cc1fd776feae5
+        url: https://files.pythonhosted.org/packages/df/86/aef78bab3afd461faecf9955a6501c4999933a48394e90f03cd512aad844/packaging-21.0.tar.gz
+        sha256: 7dc96269f53a4ccec5c0670940a4281106dd0bb343f47b7471f779df49c2fbe7
+        x-checker-data:
+          type: pypi
+          name: packaging
         
   - name: python3-Pyparsing
     buildsystem: simple
@@ -47,8 +55,11 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://github.com/pyparsing/pyparsing/releases/download/pyparsing_2.4.7/pyparsing-2.4.7.tar.gz
+        url: https://files.pythonhosted.org/packages/c1/47/dfc9c342c9842bbe0036c7f763d2d6686bcf5eb1808ba3e170afdb282210/pyparsing-2.4.7.tar.gz
         sha256: c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1
+        x-checker-data:
+          type: pypi
+          name: Pyparsing
         
   - name: python3-toml
     buildsystem: simple
@@ -58,8 +69,11 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://github.com/uiri/toml/archive/refs/tags/0.10.2.tar.gz
-        sha256: 71d4039bbdec91e3e7591ec5d6c943c58f9a2d17e5f6783acdc378f743fcdd2a
+        url: https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz
+        sha256: b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f
+        x-checker-data:
+          type: pypi
+          name: toml
 
   - name: sip
     buildsystem: simple
@@ -80,6 +94,9 @@ modules:
       - type: archive
         url: https://files.pythonhosted.org/packages/b1/40/dd8f081f04a12912b65417979bf2097def0af0f20c89083ada3670562ac5/PyQt5_sip-12.9.0.tar.gz
         sha256: d3e4489d7c2b0ece9d203ae66e573939f7f60d4d29e089c9f11daa17cfeaae32
+        x-checker-data:
+          type: pypi
+          name: PyQt5-sip
  
   - name: PyQt5
     buildsystem: simple
@@ -107,6 +124,9 @@ modules:
       - type: archive
         url: https://files.pythonhosted.org/packages/8e/a4/d5e4bf99dd50134c88b95e926d7b81aad2473b47fde5e3e4eac2c69a8942/PyQt5-5.15.4.tar.gz
         sha256: 2a69597e0dd11caabe75fae133feca66387819fc9bc050f547e5551bce97e5be
+        x-checker-data:
+          type: pypi
+          name: PyQt5
         
   - name: gsl
     config-opts:
@@ -117,6 +137,11 @@ modules:
       - type: archive
         url: https://ftp.gnu.org/gnu/gsl/gsl-2.6.tar.gz
         sha256: b782339fc7a38fe17689cb39966c4d821236c28018b6593ddb6fd59ee40786a8
+        x-checker-data:
+          type: anitya
+          project-id: 1267
+          stable-only: true
+          url-template: https://ftp.gnu.org/gnu/gsl/gsl-$version.tar.gz
         
   - name: scidavis        
     buildsystem: cmake
@@ -131,3 +156,8 @@ modules:
       - type: archive
         url: https://sourceforge.net/projects/scidavis/files/SciDAVis/2/2.4/scidavis-2.4.0.tar.gz
         sha256: 16506234115949b3f46ebfadc5add15c0d7d95367a6fb60f5042fcbf1d95e70e
+        x-checker-data:
+          type: anitya
+          project-id: 6839
+          stable-only: true
+          url-template: https://sourceforge.net/projects/scidavis/files/SciDAVis/$major/$major.$minor/scidavis-$version.tar.gz

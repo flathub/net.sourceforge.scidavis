@@ -150,7 +150,7 @@ modules:
     sources:
       - type: archive
         url: https://sourceforge.net/projects/scidavis/files/SciDAVis/2/2.4/scidavis-2.4.0.tar.gz
-        sha256: 16506234115949b3f46ebfadc5add15c0d7d95367a6fb60f5042fcbf1d95e70e
+        sha256: 251a85b3bac687974f360d3796048c20ded3bf0bd69e0d1cfd1db23d013f89ed
         x-checker-data:
           type: anitya
           project-id: 6839

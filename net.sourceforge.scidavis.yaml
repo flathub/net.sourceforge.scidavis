@@ -1,7 +1,7 @@
 app-id: net.sourceforge.scidavis
 runtime: org.kde.Platform
 sdk: org.kde.Sdk
-runtime-version: '5.15'
+runtime-version: '5.15-21.08'
 command: scidavis
 rename-desktop-file: scidavis.desktop
 rename-icon: scidavis
@@ -74,18 +74,6 @@ modules:
         x-checker-data:
           type: pypi
           name: toml
-
-  - name: PyQt-builder
-    buildsystem: simple
-    build-commands:
-      - python3 setup.py install --prefix=/app --root=/
-    sources:
-      - type: archive
-        url: https://files.pythonhosted.org/packages/8b/5f/1bd49787262ddce37b826ef49dcccf5a9970facf0ed363dee5ee233e681d/PyQt-builder-1.12.2.tar.gz
-        sha256: f62bb688d70e0afd88c413a8d994bda824e6cebd12b612902d1945c5a67edcd7
-        x-checker-data:
-          type: pypi
-          name: PyQt-builder
 
   - name: sip
     buildsystem: simple
@@ -161,8 +149,8 @@ modules:
       - install -Dm644 scidavis/scidavis.appdata.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.appdata.xml
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/scidavis/files/SciDAVis/2/2.7/scidavis-2.7.tar.gz
-        sha256: 3687b58be4d15f8500414aa78195a27bb1795caaa15ff328b253147ef58c8fe2
+        url: https://sourceforge.net/projects/scidavis/files/SciDAVis/2/2.4/scidavis-2.4.0.tar.gz
+        sha256: 16506234115949b3f46ebfadc5add15c0d7d95367a6fb60f5042fcbf1d95e70e
         x-checker-data:
           type: anitya
           project-id: 6839

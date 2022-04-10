@@ -1,7 +1,7 @@
 app-id: net.sourceforge.scidavis
 runtime: org.kde.Platform
 sdk: org.kde.Sdk
-runtime-version: '5.15'
+runtime-version: '5.15-21.08'
 command: scidavis
 rename-desktop-file: scidavis.desktop
 rename-icon: scidavis

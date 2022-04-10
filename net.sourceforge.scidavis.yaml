@@ -29,8 +29,8 @@ modules:
       - /bin
     sources:
       - type: archive
-        url: https://github.com/beltoforion/muparser/archive/v2.3.2.tar.gz
-        sha256: b35fc84e3667d432e3414c8667d5764dfa450ed24a99eeef7ee3f6647d44f301
+        url: https://github.com/beltoforion/muparser/archive/v2.3.3-1.tar.gz
+        sha256: 91d26d8274ae9cd9c776ee58250aeddc6b574f369eafd03b25045b858a2b8177
         x-checker-data:
           type: anitya
           project-id: 2033
@@ -43,8 +43,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/df/86/aef78bab3afd461faecf9955a6501c4999933a48394e90f03cd512aad844/packaging-21.0.tar.gz
-        sha256: 7dc96269f53a4ccec5c0670940a4281106dd0bb343f47b7471f779df49c2fbe7
+        url: https://files.pythonhosted.org/packages/df/9e/d1a7217f69310c1db8fdf8ab396229f55a699ce34a203691794c5d1cad0c/packaging-21.3.tar.gz
+        sha256: dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb
         x-checker-data:
           type: pypi
           name: packaging
@@ -55,8 +55,8 @@ modules:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/31/c9/b29ea153b9bffaae787ecc81873b4b51bd36cc13c37586b41891beae37eb/pyparsing-3.0.1.tar.gz
-        sha256: 84196357aa3566d64ad123d7a3c67b0e597a115c4934b097580e5ce220b91531
+        url: https://files.pythonhosted.org/packages/31/df/789bd0556e65cf931a5b87b603fcf02f79ff04d5379f3063588faaf9c1e4/pyparsing-3.0.8.tar.gz
+        sha256: 7bf433498c016c4314268d95df76c81b842a4cb2b276fa3312cfb1e1d85f6954
         x-checker-data:
           type: pypi
           name: Pyparsing
@@ -92,8 +92,8 @@ modules:
       - python3 setup.py install --prefix=/app --root=/
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/b1/40/dd8f081f04a12912b65417979bf2097def0af0f20c89083ada3670562ac5/PyQt5_sip-12.9.0.tar.gz
-        sha256: d3e4489d7c2b0ece9d203ae66e573939f7f60d4d29e089c9f11daa17cfeaae32
+        url: https://files.pythonhosted.org/packages/c0/86/6b60c6a1b1d10524ed50fc4c6a2989492512bd46292a711318a53b243774/PyQt5_sip-12.9.1.tar.gz
+        sha256: 2f24f299b44c511c23796aafbbb581bfdebf78d0905657b7cee2141b4982030e
         x-checker-data:
           type: pypi
           name: PyQt5-sip
@@ -117,8 +117,8 @@ modules:
       - /bin
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/72/bf/4e7c66eefa9ede1ec01d065d220373667f4ca3285a83a6430eefc254904c/PyQt5-5.15.5.tar.gz
-        sha256: b411b7a8fa03901c9feb1dcbac7ea1fc3ce20b9ae682762b777cd5398749ca2b
+        url: https://files.pythonhosted.org/packages/3b/27/fd81188a35f37be9b3b4c2db1654d9439d1418823916fe702ac3658c9c41/PyQt5-5.15.6.tar.gz
+        sha256: 80343bcab95ffba619f2ed2467fd828ffeb0a251ad7225be5fc06dcc333af452
         x-checker-data:
           type: pypi
           name: PyQt5
@@ -130,8 +130,8 @@ modules:
       - /bin
     sources:
       - type: archive
-        url: https://ftp.gnu.org/gnu/gsl/gsl-2.7.tar.gz
-        sha256: efbbf3785da0e53038be7907500628b466152dbc3c173a87de1b5eba2e23602b
+        url: https://ftp.gnu.org/gnu/gsl/gsl-2.7.1.tar.gz
+        sha256: dcb0fbd43048832b757ff9942691a8dd70026d5da0ff85601e52687f6deeb34b
         x-checker-data:
           type: anitya
           project-id: 1267
@@ -149,8 +149,8 @@ modules:
       - install -Dm644 scidavis/scidavis.appdata.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.appdata.xml
     sources:
       - type: archive
-        url: https://sourceforge.net/projects/scidavis/files/SciDAVis/2/2.4/scidavis-2.4.0.tar.gz
-        sha256: 16506234115949b3f46ebfadc5add15c0d7d95367a6fb60f5042fcbf1d95e70e
+        url: https://sourceforge.net/projects/scidavis/files/SciDAVis/2/2.7/scidavis-2.7.tar.gz
+        sha256: 3687b58be4d15f8500414aa78195a27bb1795caaa15ff328b253147ef58c8fe2
         x-checker-data:
           type: anitya
           project-id: 6839

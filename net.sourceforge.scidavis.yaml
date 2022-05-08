@@ -71,8 +71,7 @@ modules:
       - type: git
         url: https://github.com/SciDAVis/scidavis
         commit: 9eece990c9beed36f36ceadd35fcad92d8f07ca7
+        tag: 2.9.0
         x-checker-data:
-          type: anitya
-          project-id: 6839
-          stable-only: true
-          url-template: https://sourceforge.net/projects/scidavis/files/SciDAVis/$major/$major.$minor/scidavis-$version.tar.gz
+          type: git
+          tag-pattern: ^([\d\.]+)$

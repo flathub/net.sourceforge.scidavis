@@ -62,7 +62,6 @@ modules:
     config-opts:
       - -DSCRIPTING_PYTHON:BOOL=ON
       - -DORIGIN_IMPORT:BOOL=ON
-      - -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
       - -DPyQt_INCLUDE_DIR=/app/lib/python3.9/site-packages/PyQt5/bindings/
     post-install:
       - mv /app/share/mime/packages/scidavis.xml /app/share/mime/packages/${FLATPAK_ID}.xml

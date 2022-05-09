@@ -1,9 +1,9 @@
 app-id: net.sourceforge.scidavis
 runtime: org.kde.Platform
 sdk: org.kde.Sdk
-runtime-version: '5.15-21.08'
+runtime-version: 5.15-21.08
 base: com.riverbankcomputing.PyQt.BaseApp
-base-version: '5.15-21.08'
+base-version: 5.15-21.08
 build-options:
   env:
     - BASEAPP_REMOVE_WEBENGINE=1
@@ -69,8 +69,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/SciDAVis/scidavis
-        commit: 9eece990c9beed36f36ceadd35fcad92d8f07ca7
-        tag: 2.9.0
+        commit: 5bad72ba1fb90dacb6c3ce195e3ec82c9ab2a8be
+        tag: 2.9.2
         x-checker-data:
           type: git
           tag-pattern: ^([\d\.]+)$

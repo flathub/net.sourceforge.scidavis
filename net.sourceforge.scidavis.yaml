@@ -2,6 +2,11 @@ app-id: net.sourceforge.scidavis
 runtime: org.kde.Platform
 sdk: org.kde.Sdk
 runtime-version: '5.15-21.08'
+base: com.riverbankcomputing.PyQt.BaseApp
+base-version: '5.15-21.08'
+build-options:
+  env:
+    - BASEAPP_REMOVE_WEBENGINE=1
 command: scidavis
 rename-desktop-file: scidavis.desktop
 rename-icon: scidavis
@@ -29,99 +34,13 @@ modules:
       - /bin
     sources:
       - type: archive
-        url: https://github.com/beltoforion/muparser/archive/v2.3.2.tar.gz
-        sha256: b35fc84e3667d432e3414c8667d5764dfa450ed24a99eeef7ee3f6647d44f301
+        url: https://github.com/beltoforion/muparser/archive/v2.3.3-1.tar.gz
+        sha256: 91d26d8274ae9cd9c776ee58250aeddc6b574f369eafd03b25045b858a2b8177
         x-checker-data:
           type: anitya
           project-id: 2033
           stable-only: true
           url-template: https://github.com/beltoforion/muparser/archive/v$version.tar.gz
-
-  - name: python3-packaging
-    buildsystem: simple
-    build-commands:
-      - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
-    sources:
-      - type: archive
-        url: https://files.pythonhosted.org/packages/df/86/aef78bab3afd461faecf9955a6501c4999933a48394e90f03cd512aad844/packaging-21.0.tar.gz
-        sha256: 7dc96269f53a4ccec5c0670940a4281106dd0bb343f47b7471f779df49c2fbe7
-        x-checker-data:
-          type: pypi
-          name: packaging
-
-  - name: python3-Pyparsing
-    buildsystem: simple
-    build-commands:
-      - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
-    sources:
-      - type: archive
-        url: https://files.pythonhosted.org/packages/31/c9/b29ea153b9bffaae787ecc81873b4b51bd36cc13c37586b41891beae37eb/pyparsing-3.0.1.tar.gz
-        sha256: 84196357aa3566d64ad123d7a3c67b0e597a115c4934b097580e5ce220b91531
-        x-checker-data:
-          type: pypi
-          name: Pyparsing
-
-  - name: python3-toml
-    buildsystem: simple
-    ensure-writable:
-      - /lib/python3.8/site-packages/easy-install.pth
-    build-commands:
-      - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
-    sources:
-      - type: archive
-        url: https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz
-        sha256: b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f
-        x-checker-data:
-          type: pypi
-          name: toml
-
-  - name: sip
-    buildsystem: simple
-    build-commands:
-      - python3 setup.py install --prefix=/app --root=/
-    cleanup:
-      - /bin
-    sources:
-      - type: archive
-        url: https://files.pythonhosted.org/packages/33/e9/27730ac17713c0a80d81d8f3bb56213f1549d96f9dc183fd16a7eec6287c/sip-5.5.0.tar.gz
-        sha256: 5d024c419b30fea8a6de8c71a560c7ab0bc3c221fbfb14d55a5b865bd58eaac5
-
-  - name: PyQt5_sip
-    buildsystem: simple
-    build-commands:
-      - python3 setup.py install --prefix=/app --root=/
-    sources:
-      - type: archive
-        url: https://files.pythonhosted.org/packages/b1/40/dd8f081f04a12912b65417979bf2097def0af0f20c89083ada3670562ac5/PyQt5_sip-12.9.0.tar.gz
-        sha256: d3e4489d7c2b0ece9d203ae66e573939f7f60d4d29e089c9f11daa17cfeaae32
-        x-checker-data:
-          type: pypi
-          name: PyQt5-sip
-
-  - name: PyQt5
-    build-options:
-      arch:
-        aarch64:
-          env:
-            DISABLE_GL: --disable-feature=PyQt_Desktop_OpenGL
-    buildsystem: simple
-    build-commands:
-      - PYVER=$(python3 -c "import sys;print(sys.version_info[1])") && QMAKEPATH=/app/lib
-        python3 configure.py --confirm-license --bindir=/app/bin --destdir=/app/lib/python3.${PYVER}/site-packages
-        --sipdir=/app/share/sip --stubsdir=/app/lib/python3.${PYVER}/site-packages/PyQt5
-        --no-designer-plugin --no-qml-plugin --no-python-dbus --no-tools --enable=QtCore
-        --enable=QtGui --enable=QtNetwork --enable=QtWidgets ${DISABLE_GL}
-      - make -j $FLATPAK_BUILDER_N_JOBS
-      - make install
-    cleanup:
-      - /bin
-    sources:
-      - type: archive
-        url: https://files.pythonhosted.org/packages/72/bf/4e7c66eefa9ede1ec01d065d220373667f4ca3285a83a6430eefc254904c/PyQt5-5.15.5.tar.gz
-        sha256: b411b7a8fa03901c9feb1dcbac7ea1fc3ce20b9ae682762b777cd5398749ca2b
-        x-checker-data:
-          type: pypi
-          name: PyQt5
 
   - name: gsl
     config-opts:
@@ -130,8 +49,8 @@ modules:
       - /bin
     sources:
       - type: archive
-        url: https://ftp.gnu.org/gnu/gsl/gsl-2.7.tar.gz
-        sha256: efbbf3785da0e53038be7907500628b466152dbc3c173a87de1b5eba2e23602b
+        url: https://ftp.gnu.org/gnu/gsl/gsl-2.7.1.tar.gz
+        sha256: dcb0fbd43048832b757ff9942691a8dd70026d5da0ff85601e52687f6deeb34b
         x-checker-data:
           type: anitya
           project-id: 1267
@@ -143,16 +62,15 @@ modules:
     config-opts:
       - -DSCRIPTING_PYTHON:BOOL=ON
       - -DORIGIN_IMPORT:BOOL=ON
-      - -DPyQt_INCLUDE_DIR=/app/share/sip
+      - -DPyQt_INCLUDE_DIR=/app/lib/python3.9/site-packages/PyQt5/bindings/
     post-install:
       - mv /app/share/mime/packages/scidavis.xml /app/share/mime/packages/${FLATPAK_ID}.xml
       - install -Dm644 scidavis/scidavis.appdata.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.appdata.xml
     sources:
-      - type: archive
-        url: https://sourceforge.net/projects/scidavis/files/SciDAVis/2/2.4/scidavis-2.4.0.tar.gz
-        sha256: 16506234115949b3f46ebfadc5add15c0d7d95367a6fb60f5042fcbf1d95e70e
+      - type: git
+        url: https://github.com/SciDAVis/scidavis
+        commit: 9eece990c9beed36f36ceadd35fcad92d8f07ca7
+        tag: 2.9.0
         x-checker-data:
-          type: anitya
-          project-id: 6839
-          stable-only: true
-          url-template: https://sourceforge.net/projects/scidavis/files/SciDAVis/$major/$major.$minor/scidavis-$version.tar.gz
+          type: git
+          tag-pattern: ^([\d\.]+)$

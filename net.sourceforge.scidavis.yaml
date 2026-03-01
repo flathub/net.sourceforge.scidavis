@@ -1,14 +1,15 @@
 app-id: net.sourceforge.scidavis
 runtime: org.kde.Platform
 sdk: org.kde.Sdk
-runtime-version: 5.15-23.08
+runtime-version: 5.15-25.08
 base: com.riverbankcomputing.PyQt.BaseApp
-base-version: 5.15-23.08
+base-version: 5.15-25.08
 build-options:
   env:
     - BASEAPP_REMOVE_WEBENGINE=1
 command: scidavis
 rename-desktop-file: scidavis.desktop
+rename-appdata-file: scidavis.appdata.xml
 rename-icon: scidavis
 finish-args:
   - --share=ipc
@@ -34,8 +35,8 @@ modules:
       - /bin
     sources:
       - type: archive
-        url: https://github.com/beltoforion/muparser/archive/v2.3.4.tar.gz
-        sha256: 0c3fa54a3ebf36dda0ed3e7cd5451c964afbb15102bdbcba08aafb359a290121
+        url: https://github.com/beltoforion/muparser/archive/v2.3.5.tar.gz
+        sha256: 20b43cc68c655665db83711906f01b20c51909368973116dfc8d7b3c4ddb5dd4
         x-checker-data:
           type: anitya
           project-id: 2033
@@ -49,8 +50,8 @@ modules:
       - /bin
     sources:
       - type: archive
-        url: https://ftp.gnu.org/gnu/gsl/gsl-2.7.1.tar.gz
-        sha256: dcb0fbd43048832b757ff9942691a8dd70026d5da0ff85601e52687f6deeb34b
+        url: https://ftp.gnu.org/gnu/gsl/gsl-2.8.tar.gz
+        sha256: 6a99eeed15632c6354895b1dd542ed5a855c0f15d9ad1326c6fe2b2c9e423190
         x-checker-data:
           type: anitya
           project-id: 1267
@@ -63,9 +64,6 @@ modules:
       - -DSCRIPTING_PYTHON:BOOL=ON
       - -DORIGIN_IMPORT:BOOL=ON
       - -DPyQt_INCLUDE_DIR=/app/lib/python/site-packages/PyQt5/bindings/
-    post-install:
-      - mv /app/share/mime/packages/scidavis.xml /app/share/mime/packages/${FLATPAK_ID}.xml
-      - install -Dm644 scidavis/scidavis.appdata.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.appdata.xml
     sources:
       - type: git
         url: https://github.com/SciDAVis/scidavis

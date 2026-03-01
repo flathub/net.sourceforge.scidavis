@@ -1,0 +1,43 @@
+From 001136c06c8f0bd90c24452318cadea176a927f6 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Sabri=20=C3=9Cnal?= <yakushabb@gmail.com>
+Date: Mon, 2 Mar 2026 02:56:00 +0300
+Subject: [PATCH] Fix appdata paper cuts
+
+---
+ scidavis/scidavis.appdata.xml | 13 ++++++-------
+ 1 file changed, 6 insertions(+), 7 deletions(-)
+
+diff --git a/scidavis/scidavis.appdata.xml b/scidavis/scidavis.appdata.xml
+index affec2fd..54c89425 100644
+--- a/scidavis/scidavis.appdata.xml
++++ b/scidavis/scidavis.appdata.xml
+@@ -22,12 +22,6 @@
+     </p>
+   </description>
+   
+-  <categories>
+-    <category>Science</category>
+-    <category>DataVisualization</category>
+-    <category>NumericalAnalysis</category>
+-  </categories>
+-
+   <launchable type="desktop-id">scidavis.desktop</launchable>
+ 
+   <screenshots>
+@@ -40,7 +34,12 @@
+     </screenshot>
+   </screenshots>
+ 
+-  <url type="homepage">http://scidavis.sourceforge.net/</url>
++  <url type="homepage">https://scidavis.sourceforge.net</url>
++  <url type="bugtracker">https://github.com/SciDAVis/scidavis/issues</url>
++  <url type="vcs-browser">https://github.com/SciDAVis/scidavis</url>
++  <developer id="io.github.scidavis">
++    <name>SciDAVis</name>
++  </developer>
+ 
+   <provides>
+     <binary>scidavis</binary>
+-- 
+2.53.0
+
